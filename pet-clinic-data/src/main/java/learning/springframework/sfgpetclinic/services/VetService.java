@@ -1,4 +1,4 @@
-package learning.springframework.sfgpetclinic.service;
+package learning.springframework.sfgpetclinic.services;
 
 import learning.springframework.sfgpetclinic.model.Vet;
 

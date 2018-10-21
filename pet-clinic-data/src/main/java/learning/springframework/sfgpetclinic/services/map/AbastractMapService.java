@@ -1,4 +1,4 @@
-package learning.springframework.sfgpetclinic.service.map;
+package learning.springframework.sfgpetclinic.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;

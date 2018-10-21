@@ -1,11 +1,16 @@
-package learning.springframework.sfgpetclinic.service.map;
+package learning.springframework.sfgpetclinic.services.map;
 
 import learning.springframework.sfgpetclinic.model.Owner;
-import learning.springframework.sfgpetclinic.service.CrudService;
+import learning.springframework.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbastractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbastractMapService<Owner, Long> implements OwnerService {
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 
     @Override
     public Set<Owner> findAll() {
@@ -31,5 +36,4 @@ public class OwnerServiceMap extends AbastractMapService<Owner, Long> implements
     public void delete(Owner owner) {
         super.delete(owner);
     }
-
 }
