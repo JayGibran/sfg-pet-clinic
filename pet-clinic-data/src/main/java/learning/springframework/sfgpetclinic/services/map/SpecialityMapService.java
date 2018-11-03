@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-    public class SpecialityServiceMap extends AbastractMapService<Speciality, Long> implements SpecialityService {
+    public class SpecialityMapService extends AbastractMapService<Speciality, Long> implements SpecialityService {
 
     @Override
     public Set<Speciality> findAll() {

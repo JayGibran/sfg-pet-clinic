@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class OwnerServiceMap extends AbastractMapService<Owner, Long> implements OwnerService {
+public class OwnerMapService extends AbastractMapService<Owner, Long> implements OwnerService {
 
     @Autowired
     private PetTypeService petTypeService;

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class VetServiceMap extends AbastractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbastractMapService<Vet, Long> implements VetService {
 
 
     @Autowired
