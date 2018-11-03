@@ -1,8 +1,8 @@
 package learning.springframework.sfgpetclinic.services.springdatajpa;
 
-import learning.springframework.sfgpetclinic.model.PetType;
-import learning.springframework.sfgpetclinic.repositories.PetTypeRepository;
-import learning.springframework.sfgpetclinic.services.PetTypeService;
+import learning.springframework.sfgpetclinic.model.Pet;
+import learning.springframework.sfgpetclinic.repositories.PetRepository;
+import learning.springframework.sfgpetclinic.services.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -12,30 +12,30 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class PetTypeSDJpaService implements PetTypeService {
+public class PetSDJpaService implements PetService {
 
     @Autowired
-    private PetTypeRepository repository;
+    private PetRepository repository;
 
     @Override
-    public Set<PetType> findAll() {
-        Set<PetType> petTypes =  new HashSet<>();
-        repository.findAll().forEach(petTypes::add);
-        return petTypes;
+    public Set<Pet> findAll() {
+        Set<Pet> pets = new HashSet<>();
+        repository.findAll().forEach(pets::add);
+        return pets;
     }
 
     @Override
-    public PetType findById(Long aLong) {
+    public Pet findById(Long aLong) {
         return repository.findById(aLong).orElse(null);
     }
 
     @Override
-    public PetType save(PetType object) {
+    public Pet save(Pet object) {
         return repository.save(object);
     }
 
     @Override
-    public void delete(PetType object) {
+    public void delete(Pet object) {
         repository.delete(object);
     }
 
