@@ -1,10 +1,7 @@
 package learning.springframework.sfgpetclinic.bootstrap;
 
 import learning.springframework.sfgpetclinic.model.*;
-import learning.springframework.sfgpetclinic.services.OwnerService;
-import learning.springframework.sfgpetclinic.services.PetTypeService;
-import learning.springframework.sfgpetclinic.services.SpecialityService;
-import learning.springframework.sfgpetclinic.services.VetService;
+import learning.springframework.sfgpetclinic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,6 +22,9 @@ public class DataLoader implements CommandLineRunner {
 
     @Autowired
     private SpecialityService specialityService;
+
+    @Autowired
+    private VisitService visitService;
 
     @Override
     public void run(String... args) throws Exception {
@@ -65,7 +65,7 @@ public class DataLoader implements CommandLineRunner {
         owner.setTelephone("12316123132");
 
         Pet loganPet = new Pet();
-        loganPet.setPetType(cat);
+        loganPet.setPetType(dog);
         loganPet.setOwner(owner);
         loganPet.setName("Logan");
         loganPet.setBirthDate(LocalDate.now());
@@ -73,6 +73,13 @@ public class DataLoader implements CommandLineRunner {
         owner.getPets().add(loganPet);
 
         ownerService.save(owner);
+
+        Visit visit = new Visit();
+        visit.setPet(loganPet);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("Logan friend");
+
+        visitService.save(visit);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Jay");
